@@ -1,0 +1,8 @@
+services:
+    nginx-redirect:
+        container_name: nginx-redirect
+        build: ./nginx-redirect-docker
+        ports:
+            - ${NGINX_REDIRECT_DOCKER_PORT:-80}:80
+        environment:
+            REDIRECT_TARGET_HOST: ${NGINX_REDIRECT_TARGET_HOST:-https://shared.nl}

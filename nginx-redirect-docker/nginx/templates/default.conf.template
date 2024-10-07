@@ -1,0 +1,10 @@
+# -*- nginx -*-
+
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        return 301 ${REDIRECT_TARGET_HOST}$request_uri;
+    }
+}
